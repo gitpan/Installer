@@ -18,7 +18,7 @@ installer - Install an .installer configuration file
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -41,6 +41,10 @@ Sample .installer file might look like
   url "http://download.osgeo.org/geos/geos-3.4.2.tar.bz2";
   url "http://download.osgeo.org/postgis/source/postgis-2.1.0.tar.gz";
   cpanm "DBD::Pg";
+
+The .installer file can also be fetched by URL:
+
+  installer -u http://stardestroyer.de/postgis.installer ~/postgistest
 
 =head1 DESCRIPTION
 

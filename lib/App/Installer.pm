@@ -3,7 +3,7 @@ BEGIN {
   $App::Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::Installer::VERSION = '0.002';
+  $App::Installer::VERSION = '0.003';
 }
 # ABSTRACT: Application class for Installer
 
@@ -14,8 +14,16 @@ use IO::All;
 
 option 'file' => (
   is => 'ro',
+  format => 's',
   lazy => 1,
   default => sub { '.installer' },
+);
+
+option 'url' => (
+  is => 'ro',
+  format => 's',
+  short => 'u',
+  predicate => 1,
 );
 
 has file_path => (
@@ -29,7 +37,12 @@ sub BUILD {
   my $target = shift @ARGV;
   die "Need a target to deploy to" unless $target;
   $target = path($target)->absolute->stringify;
-  my $installer_code = io($self->file_path)->all;
+  my $installer_code;
+  if ($self->has_url) {
+    $installer_code = io($self->url)->get->content;
+  } else {
+    $installer_code = io($self->file_path)->all;
+  }
   my $target_class = 'App::Installer::Sandbox'.$$;
 
   my ( $err );
@@ -65,7 +78,7 @@ App::Installer - Application class for Installer
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

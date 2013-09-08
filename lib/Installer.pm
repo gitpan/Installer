@@ -3,7 +3,7 @@ BEGIN {
   $Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::VERSION = '0.002';
+  $Installer::VERSION = '0.003';
 }
 # ABSTRACT: What does it do? It installs stuff....
 
@@ -57,7 +57,7 @@ Installer - What does it do? It installs stuff....
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -82,6 +82,9 @@ Or in class usage (not suggested):
 
   my $target = Installer::Target->new(
     target_directory => $ENV{HOME}.'/myenv',
+    output_code => sub {
+      your_own_logger(join(" ",@_));
+    },
   );
 
   $target->prepare_installation;
@@ -93,6 +96,19 @@ Or in class usage (not suggested):
   # will run in the target directory
   $target->install_run("command","--with-args");
   $target->finish_installation;
+
+  # to get the filename of the log produced on the installation
+  print $target->log_filename;
+
+  my $other_usage = Installer::Target->new(
+    target_directory => $ENV{HOME}.'/otherenv',
+    installer_code => sub {
+      $_[0]->install_perl("5.18.1");
+      $_[0]->install_cpanm("Task::Kensho");
+    },
+  );
+
+  $other_usage->installation;
 
 =head1 DESCRIPTION
 

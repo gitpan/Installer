@@ -3,8 +3,14 @@ Changes from 1739-11-25 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.002 at 2013-09-08 23:12:18 +0000
+version 0.003 at 2013-09-08 23:36:04 +0000
 ------------------------------------------
+
+  Change: 80c59120eb3814b32adf9ddf83b07d1ab2658d30
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 01:35:50 +0000
+
+    Added URL support and a bit more documentation about OO usage 
 
   Change: 23a1aae1676d025aee32d37b8ab850cdb2fce0af
   Author: Torsten Raudssus <torsten@raudss.us>
