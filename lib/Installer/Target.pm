@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Target::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Target::VERSION = '0.001';
+  $Installer::Target::VERSION = '0.002';
 }
 # ABSTRACT: Currently running project
 
@@ -152,6 +152,13 @@ sub install_cpanm {
   $self->run(undef,'cpanm',@modules);
 }
 
+sub install_pip {
+  my ( $self, @modules ) = @_;
+  for (@modules) {
+    $self->run(undef,'pip','install',$_);    
+  }
+}
+
 sub setup_env {
   my ( $self ) = @_;
   if (defined $self->meta->{PATH} && @{$self->meta->{PATH}}) {
@@ -190,7 +197,7 @@ sub update_env {
   $self->meta->{seen_dirs} = \%seen;
 }
 
-sub custom_run {
+sub install_run {
   my ( $self, @args ) = @_;
   $self->run($self->target,@args);
   push @{$self->actions}, {
@@ -267,7 +274,8 @@ sub write_export {
 }
 
 our $current;
-sub installation {
+
+sub prepare_installation {
   my ( $self ) = @_;
   die "Target directory is a file" if $self->target->is_file;
   $current = $self;
@@ -278,12 +286,22 @@ sub installation {
   $self->meta->{last_run} = time;
   $self->meta->{preinstall_ENV} = \%ENV;
   $self->setup_env;
-  $self->installer_code->($self);
+}
+
+sub finish_installation {
+  my ( $self ) = @_;
   $self->write_export;
   $self->log_print("Done");
   %ENV = %{$self->meta->{preinstall_ENV}};
   delete $self->meta->{preinstall_ENV};
   $current = undef;
+}
+
+sub installation {
+  my ( $self ) = @_;
+  $self->prepare_installation;
+  $self->installer_code->($self);
+  $self->finish_installation;
 }
 
 1;
@@ -298,7 +316,7 @@ Installer::Target - Currently running project
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 

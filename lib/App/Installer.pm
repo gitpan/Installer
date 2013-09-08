@@ -3,7 +3,7 @@ BEGIN {
   $App::Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::Installer::VERSION = '0.001';
+  $App::Installer::VERSION = '0.002';
 }
 # ABSTRACT: Application class for Installer
 
@@ -31,6 +31,8 @@ sub BUILD {
   $target = path($target)->absolute->stringify;
   my $installer_code = io($self->file_path)->all;
   my $target_class = 'App::Installer::Sandbox'.$$;
+
+  my ( $err );
   {
     local $@;
     eval <<EVAL;
@@ -44,7 +46,11 @@ install_to '$target' => sub {
 };
 
 EVAL
+    $err = $@;
   }
+
+  if ($err) { die "$err" };
+
 }
 
 1;
@@ -59,11 +65,11 @@ App::Installer - Application class for Installer
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
-See L<installer> for more information
+See L<installer> and for more information
 
 =encoding utf8
 

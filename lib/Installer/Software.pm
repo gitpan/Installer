@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Software::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Software::VERSION = '0.001';
+  $Installer::Software::VERSION = '0.002';
 }
 # ABSTRACT: A software installation
 
@@ -156,6 +156,8 @@ sub configure {
     }
     if ($self->unpack_path('configure')->exists) {
       $self->run_configure;
+    } elsif ($self->unpack_path('setup.py')->exists) {
+      # no configure
     } elsif ($self->unpack_path('Makefile.PL')) {
       $self->run($self->unpack_path,'perl','Makefile.PL');
     }
@@ -167,7 +169,9 @@ sub compile {
   my ( $self ) = @_;
   return if defined $self->meta->{compile};
   $self->log_print("Compiling ".$self->unpack_path." ...");
-  if ($self->unpack_path('Makefile')->exists) {
+  if ($self->unpack_path('setup.py')->exists and !$self->unpack_path('configure')->exists) {
+    $self->run($self->unpack_path,'python','setup.py','build');
+  } elsif ($self->unpack_path('Makefile')->exists) {
     $self->run($self->unpack_path,'make');
   }
   $self->meta->{compile} = 1;
@@ -191,7 +195,9 @@ sub install {
   my ( $self ) = @_;
   return if defined $self->meta->{install};
   $self->log_print("Installing ".$self->unpack_path." ...");
-  if ($self->unpack_path('Makefile')->exists) {
+  if ($self->unpack_path('setup.py')->exists and !$self->unpack_path('configure')->exists) {
+    $self->run($self->unpack_path,'python','setup.py','install');
+  } elsif ($self->unpack_path('Makefile')->exists) {
     $self->run($self->unpack_path,'make','install');
   }
   $self->meta->{install} = 1;
@@ -209,7 +215,7 @@ Installer::Software - A software installation
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 

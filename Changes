@@ -3,8 +3,26 @@ Changes from 1739-11-25 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.001 at 2013-09-08 21:06:12 +0000
+version 0.002 at 2013-09-08 23:12:18 +0000
 ------------------------------------------
+
+  Change: 23a1aae1676d025aee32d37b8ab850cdb2fce0af
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 01:11:50 +0000
+
+    More documentation and warnings and an OO example 
+
+  Change: e0daed321dd2f1fb5b1a24b4f4e7e2ec71a1225f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 00:15:41 +0000
+
+    Python setup.py support and pip install option 
+
+  Change: dc4e703a4fbe1f9267abd8b02f7d306cec187c21
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 23:21:02 +0000
+
+    Small typo 
 
   Change: d4ecfeb6ec19f17041c299f7391a7d19f1ab20da
   Author: Torsten Raudssus <torsten@raudss.us>
