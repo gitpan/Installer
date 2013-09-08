@@ -1,0 +1,15 @@
+Changes
+LICENSE
+MANIFEST
+META.json
+META.yml
+Makefile.PL
+README
+bin/installer
+dist.ini
+lib/App/Installer.pm
+lib/Installer.pm
+lib/Installer/Software.pm
+lib/Installer/Target.pm
+t/load.t
+t/release-pod-syntax.t

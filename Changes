@@ -1,0 +1,59 @@
+==================================================
+Changes from 1739-11-25 00:00:00 +0000 to present.
+==================================================
+
+------------------------------------------
+version 0.001 at 2013-09-08 21:06:12 +0000
+------------------------------------------
+
+  Change: d4ecfeb6ec19f17041c299f7391a7d19f1ab20da
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 23:03:10 +0000
+
+    More documentation 
+
+  Change: 579be33ec206ac4816b95aebd17b6d4f192517ba
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 22:48:30 +0000
+
+    Finished up file support 
+
+  Change: 12ae0b9a6fe51c7d33f61d72ee0063f6bd4e895f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 22:35:47 +0000
+
+    Tuned requirements 
+
+  Change: 2f58cb9a4c1b39209b55a2d9c204eea9d3beca5a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 21:14:34 +0000
+
+    Oh yeah... now with app 
+
+  Change: 4ef23beebd0b76eaedaf2e5ba3e03ab0af859691
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-08 01:42:23 +0000
+
+    Better output on failure 
+
+  Change: d72d27adaeaaafdcce0de3e1987903a2681b8693
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-07 23:32:19 +0000
+
+    Added .travis.yml 
+
+  Change: 71106369905e65af72d15cf6e32e64f5105fc238
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-07 23:31:40 +0000
+
+    More stuff... and making it now live 
+
+  Change: 6b6d39460da02b82f93fd8182dd22a24bf736654
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-06 03:55:08 +0000
+
+    initial commit 
+
+================
+End of releases.
+================
