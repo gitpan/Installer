@@ -4,9 +4,26 @@
 
 use strict;
 use warnings;
+use Getopt::Long;
 use App::Installer;
 
-App::Installer->new_with_options;
+my ( $url, $file );
+
+GetOptions(
+  "u=s" => \$url,
+  "f=s" => \$file,
+);
+
+my $target = shift @ARGV;
+
+die "You can't give file and url at once" if defined $url and defined $file;
+die "Need a target to deploy to" unless $target;
+
+App::Installer->new(
+  target => $target,
+  defined $url ? ( url => $url ) : (),
+  defined $file ? ( file => $file ) : (),
+)->install_to_target;
 
 __END__
 
@@ -18,15 +35,21 @@ installer - Install an .installer configuration file
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
-  # Will use .installer file in local directory
+  # Directly usable without install via http://installer.pm
+  curl -s -L http://installer.pm | perl - ~/myprojectenv
+
+  # Will use .installer file in current directory
   installer ~/myprojectenv
 
   # Using a specific installer file
-  installer --file=/other/installer_file ~/myprojectenv
+  installer -f /other/installer_file ~/myprojectenv
+
+  # The .installer file can also be fetched by URL:
+  installer -u http://stardestroyer.de/postgis.installer ~/myprojectenv
 
   # On shell do the following for using the environment after installation
   . ~/myprojectenv/export.sh
@@ -41,10 +64,6 @@ Sample .installer file might look like
   url "http://download.osgeo.org/geos/geos-3.4.2.tar.bz2";
   url "http://download.osgeo.org/postgis/source/postgis-2.1.0.tar.gz";
   cpanm "DBD::Pg";
-
-The .installer file can also be fetched by URL:
-
-  installer -u http://stardestroyer.de/postgis.installer ~/postgistest
 
 =head1 DESCRIPTION
 
