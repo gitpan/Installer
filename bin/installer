@@ -6,6 +6,8 @@ use strict;
 use warnings;
 use Getopt::Long;
 use App::Installer;
+use Installer::Target;
+use Installer::Software;
 
 my ( $url, $file, $installer_code );
 
@@ -37,7 +39,7 @@ installer - Install an .installer configuration file
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

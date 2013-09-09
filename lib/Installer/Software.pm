@@ -3,12 +3,13 @@ BEGIN {
   $Installer::Software::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Software::VERSION = '0.005';
+  $Installer::Software::VERSION = '0.006';
 }
 # ABSTRACT: A software installation
 
 use Moo;
 use IO::All;
+use IO::All::LWP;
 use JSON_File;
 use Path::Class;
 use File::chdir;
@@ -217,7 +218,7 @@ Installer::Software - A software installation
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 AUTHOR
 

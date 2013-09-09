@@ -30,7 +30,7 @@
             "CPAN::Perl::Releases" : "1.42",
             "IO::All" : "0",
             "IO::All::LWP" : "0",
-            "JSON_File" : "0",
+            "JSON_File" : "0.003",
             "Module::CPANfile" : "0",
             "Moo" : "0",
             "Path::Class" : "0",
@@ -53,7 +53,7 @@
          "web" : "https://github.com/Getty/p5-installer"
       }
    },
-   "version" : "0.005",
+   "version" : "0.006",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018000"
@@ -133,11 +133,6 @@
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "@Author::GETTY/Git::NextVersion",
             "version" : "2.014"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Run::Release",
-            "name" : "@Author::GETTY/Run::Release",
-            "version" : "0.020"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",

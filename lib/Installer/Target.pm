@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Target::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Target::VERSION = '0.005';
+  $Installer::Target::VERSION = '0.006';
 }
 # ABSTRACT: Currently running project
 
@@ -322,7 +322,7 @@ Installer::Target - Currently running project
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 AUTHOR
 

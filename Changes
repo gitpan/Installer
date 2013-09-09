@@ -3,8 +3,14 @@ Changes from 1739-11-26 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.005 at 2013-09-09 02:10:06 +0000
+version 0.006 at 2013-09-09 03:45:43 +0000
 ------------------------------------------
+
+  Change: d7eda661097ea966d637829fd1c3f8b22cf79e9f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 05:12:36 +0000
+
+    More stuff for fatpack.... I think ;) 
 
   Change: 5385efb2347b40459cf679f404c5ab443f0a6b90
   Author: Torsten Raudssus <torsten@raudss.us>
