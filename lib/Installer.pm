@@ -3,7 +3,7 @@ BEGIN {
   $Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::VERSION = '0.004';
+  $Installer::VERSION = '0.005';
 }
 # ABSTRACT: What does it do? It installs stuff....
 
@@ -57,7 +57,7 @@ Installer - What does it do? It installs stuff....
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 

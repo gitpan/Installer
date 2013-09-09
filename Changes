@@ -3,8 +3,14 @@ Changes from 1739-11-26 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.004 at 2013-09-09 02:02:08 +0000
+version 0.005 at 2013-09-09 02:10:06 +0000
 ------------------------------------------
+
+  Change: 5385efb2347b40459cf679f404c5ab443f0a6b90
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 04:10:00 +0000
+
+    Added -e option 
 
   Change: 29948021573502452a19afac66ebbd8925cd5ac3
   Author: Torsten Raudssus <torsten@raudss.us>
