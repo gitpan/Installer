@@ -28,6 +28,7 @@
          "requires" : {
             "Archive::Extract" : "0",
             "CPAN::Perl::Releases" : "1.42",
+            "File::chdir" : "0",
             "IO::All" : "0",
             "IO::All::LWP" : "0",
             "JSON_File" : "0.003",
@@ -53,7 +54,7 @@
          "web" : "https://github.com/Getty/p5-installer"
       }
    },
-   "version" : "0.006",
+   "version" : "0.007",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018000"

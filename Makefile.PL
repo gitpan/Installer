@@ -17,13 +17,14 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Installer",
   "EXE_FILES" => [
-    "bin/installer"
+    "bin/installto"
   ],
   "LICENSE" => "perl",
   "NAME" => "Installer",
   "PREREQ_PM" => {
     "Archive::Extract" => 0,
     "CPAN::Perl::Releases" => "1.42",
+    "File::chdir" => 0,
     "IO::All" => 0,
     "IO::All::LWP" => 0,
     "JSON_File" => "0.003",
@@ -36,7 +37,7 @@ my %WriteMakefileArgs = (
     "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.98"
   },
-  "VERSION" => "0.006",
+  "VERSION" => "0.007",
   "test" => {
     "TESTS" => "t/*.t"
   }

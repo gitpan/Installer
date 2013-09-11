@@ -1,10 +1,28 @@
 ==================================================
-Changes from 1739-11-26 00:00:00 +0000 to present.
+Changes from 1739-11-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.006 at 2013-09-09 03:45:43 +0000
+version 0.007 at 2013-09-11 02:37:31 +0000
 ------------------------------------------
+
+  Change: 5aa4b60cf0cdf822123c05f28a09ba9332fdcc7b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-11 04:37:07 +0000
+
+    Another .travis.yml change... 
+
+  Change: 5cedb318fa3fa623cafebdeab0c14083ef6e43a6
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-11 04:36:32 +0000
+
+    Ok finally solved the base problem 
+
+  Change: 23d5ba5ef7efaa46da509d2116af85ee56efebe9
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-09 06:43:07 +0000
+
+    Renamed main binary to avoid collides with macosx users... <facepalm> 
 
   Change: d7eda661097ea966d637829fd1c3f8b22cf79e9f
   Author: Torsten Raudssus <torsten@raudss.us>

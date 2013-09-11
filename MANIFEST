@@ -5,9 +5,8 @@ META.json
 META.yml
 Makefile.PL
 README
-bin/installer
+bin/installto
 dist.ini
-index.txt
 lib/App/Installer.pm
 lib/Installer.pm
 lib/Installer/Software.pm

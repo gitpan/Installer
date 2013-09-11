@@ -17,6 +17,7 @@ name: Installer
 requires:
   Archive::Extract: 0
   CPAN::Perl::Releases: 1.42
+  File::chdir: 0
   IO::All: 0
   IO::All::LWP: 0
   JSON_File: 0.003
@@ -27,7 +28,7 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-installer
   repository: https://github.com/Getty/p5-installer.git
-version: 0.006
+version: 0.007
 x_Dist_Zilla:
   perl:
     version: 5.018000
