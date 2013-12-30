@@ -3,22 +3,28 @@ BEGIN {
   $Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::VERSION = '0.007';
+  $Installer::VERSION = '0.900';
 }
 # ABSTRACT: What does it do? It installs stuff....
 
 use strict;
 use warnings;
 use Installer::Target;
+use Cwd;
 
 our @functions = qw(
 
   run
+  export
+  unset
   url
   file
   perl
   cpanm
   pip
+  perldeps
+  dzildeps
+  postgres
 
 );
 
@@ -27,10 +33,13 @@ sub import {
   {
     no strict 'refs';
     *{"$pkg\::install_to"} = sub {
-      my ( $target_directory, $installer_code ) = @_;
+      my ( $target_directory, $installer_code, $source_directory ) = @_;
       my $installer_target = Installer::Target->new(
         target_directory => $target_directory,
         installer_code => $installer_code,
+        source_directory => defined $source_directory
+          ? $source_directory
+          : getcwd(),
       );
       $installer_target->installation;
     };
@@ -57,7 +66,7 @@ Installer - What does it do? It installs stuff....
 
 =head1 VERSION
 
-version 0.007
+version 0.900
 
 =head1 SYNOPSIS
 
@@ -112,11 +121,26 @@ Or in class usage (not suggested):
 
 =head1 DESCRIPTION
 
-See L<installer> for more information.
+You should use this through the command L<installto>.
 
 B<TOTALLY BETA, PLEASE TEST :D>
 
 =encoding utf8
+
+=head1 SUPPORT
+
+IRC
+
+  Join #cindustries on irc.quakenet.org. Highlight Getty for fast reaction :).
+
+Repository
+
+  http://github.com/Getty/p5-installer
+  Pull request and additional contributors are welcome
+
+Issue Tracker
+
+  http://github.com/Getty/p5-installer/issues
 
 =head1 AUTHOR
 

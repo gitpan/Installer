@@ -1,10 +1,29 @@
 ==================================================
-Changes from 1739-11-28 00:00:00 +0000 to present.
+Changes from 1740-03-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.007 at 2013-09-11 02:37:31 +0000
+version 0.900 at 2013-12-30 03:21:34 +0000
 ------------------------------------------
+
+  Change: 3a7e64f62d496f9c5040a3ec8368e632efb01e73
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-30 04:21:15 +0000
+
+    More documentation, some fixes, still some bugs... but it runs better
+    for now 
+
+  Change: 5b132b256ec398d47a1f662c4cfa927c6d281890
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-15 01:04:55 +0000
+
+    Lost of changes.. still a bug 
+
+  Change: c6cb0830e7b2a43345be8bab10087767d0485b12
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-11 05:06:57 +0000
+
+    Added CURRENT_INSTALLER_ENV to export.sh 
 
   Change: 5aa4b60cf0cdf822123c05f28a09ba9332fdcc7b
   Author: Torsten Raudssus <torsten@raudss.us>

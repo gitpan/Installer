@@ -3,7 +3,7 @@ BEGIN {
   $App::Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::Installer::VERSION = '0.007';
+  $App::Installer::VERSION = '0.900';
 }
 # ABSTRACT: Application class for Installer
 
@@ -20,7 +20,7 @@ has target => (
 has file => (
   is => 'ro',
   lazy => 1,
-  default => sub { '.installer' },
+  default => sub { 'installer' },
 );
 
 has installer_code => (
@@ -55,6 +55,7 @@ package $target_class;
 no strict;
 no warnings;
 use Installer;
+use IO::All -utf8;
 
 install_to '$target' => sub {
   $installer_code;
@@ -80,13 +81,28 @@ App::Installer - Application class for Installer
 
 =head1 VERSION
 
-version 0.007
+version 0.900
 
 =head1 DESCRIPTION
 
-See L<installer> and for more information
+You should use this through the command L<installto>.
 
-=encoding utf8
+B<TOTALLY BETA, PLEASE TEST :D>
+
+=head1 SUPPORT
+
+IRC
+
+  Join #cindustries on irc.quakenet.org. Highlight Getty for fast reaction :).
+
+Repository
+
+  http://github.com/Getty/p5-installer
+  Pull request and additional contributors are welcome
+
+Issue Tracker
+
+  http://github.com/Getty/p5-installer/issues
 
 =head1 AUTHOR
 

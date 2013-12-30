@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Software::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Software::VERSION = '0.007';
+  $Installer::Software::VERSION = '0.900';
 }
 # ABSTRACT: A software installation
 
@@ -36,6 +36,16 @@ has archive => (
   predicate => 1,
 );
 
+has export => (
+  is => 'ro',
+  predicate => 1,
+);
+
+has unset => (
+  is => 'ro',
+  predicate => 1,
+);
+
 for (qw( custom_configure custom_test post_install export_sh )) {
   has $_ => (
     is => 'ro',
@@ -43,7 +53,7 @@ for (qw( custom_configure custom_test post_install export_sh )) {
   );
 }
 
-for (qw( with enable disable without )) {
+for (qw( with enable disable without patch )) {
   has $_ => (
     is => 'ro',
     predicate => 1,
@@ -119,6 +129,14 @@ sub unpack {
   }
   my $src_path = dir($archive->extract_path)->absolute->stringify;
   $self->log_print("Extracted to ".$src_path." ...");
+  if ($self->has_patch) {
+    my @patches = ref $self->patch eq 'ARRAY'
+      ? @{$self->patch}
+      : $self->patch;
+    for (@patches) {
+      $self->target->patch_via_url($self->target->src_dir,$_,'-p0');
+    }
+  }
   $self->meta->{unpack} = $src_path;
 }
 sub unpack_path { dir(shift->meta->{unpack},@_) }
@@ -218,7 +236,28 @@ Installer::Software - A software installation
 
 =head1 VERSION
 
-version 0.007
+version 0.900
+
+=head1 DESCRIPTION
+
+You should use this through the command L<installto>.
+
+B<TOTALLY BETA, PLEASE TEST :D>
+
+=head1 SUPPORT
+
+IRC
+
+  Join #cindustries on irc.quakenet.org. Highlight Getty for fast reaction :).
+
+Repository
+
+  http://github.com/Getty/p5-installer
+  Pull request and additional contributors are welcome
+
+Issue Tracker
+
+  http://github.com/Getty/p5-installer/issues
 
 =head1 AUTHOR
 
