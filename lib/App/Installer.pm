@@ -3,7 +3,7 @@ BEGIN {
   $App::Installer::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::Installer::VERSION = '0.900';
+  $App::Installer::VERSION = '0.901';
 }
 # ABSTRACT: Application class for Installer
 
@@ -81,7 +81,7 @@ App::Installer - Application class for Installer
 
 =head1 VERSION
 
-version 0.900
+version 0.901
 
 =head1 DESCRIPTION
 

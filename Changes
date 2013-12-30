@@ -3,8 +3,14 @@ Changes from 1740-03-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.900 at 2013-12-30 03:21:34 +0000
+version 0.901 at 2013-12-30 04:20:06 +0000
 ------------------------------------------
+
+  Change: bc167fb551ba5a1a8280b07a2f7098ae19719655
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-30 05:10:15 +0000
+
+    Fixed 5.1 5.12 bug 
 
   Change: 3a7e64f62d496f9c5040a3ec8368e632efb01e73
   Author: Torsten Raudssus <torsten@raudss.us>

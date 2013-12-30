@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Target::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Installer::Target::VERSION = '0.900';
+  $Installer::Target::VERSION = '0.901';
 }
 # ABSTRACT: Currently running project
 
@@ -203,7 +203,7 @@ sub install_postgres {
   if (defined $args{superuser_with_db}) {
     my $superuser_with_db = delete $args{superuser_with_db};
     if (ref $superuser_with_db eq 'HASH') {
-      for (keys $superuser_with_db) {
+      for (keys %{$superuser_with_db}) {
         $users{$_} = {
           superuser => 1,
           dbs => [
@@ -568,7 +568,7 @@ Installer::Target - Currently running project
 
 =head1 VERSION
 
-version 0.900
+version 0.901
 
 =head1 DESCRIPTION
 

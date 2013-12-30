@@ -44,7 +44,7 @@ installto - Install an 'installer' configuration file
 
 =head1 VERSION
 
-version 0.900
+version 0.901
 
 =head1 SYNOPSIS
 
