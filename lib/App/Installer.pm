@@ -2,11 +2,8 @@ package App::Installer;
 BEGIN {
   $App::Installer::AUTHORITY = 'cpan:GETTY';
 }
-{
-  $App::Installer::VERSION = '0.901';
-}
 # ABSTRACT: Application class for Installer
-
+$App::Installer::VERSION = '0.902';
 use Moo;
 use Path::Class;
 use IO::All;
@@ -81,7 +78,7 @@ App::Installer - Application class for Installer
 
 =head1 VERSION
 
-version 0.901
+version 0.902
 
 =head1 DESCRIPTION
 

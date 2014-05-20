@@ -2,11 +2,8 @@ package Installer;
 BEGIN {
   $Installer::AUTHORITY = 'cpan:GETTY';
 }
-{
-  $Installer::VERSION = '0.901';
-}
 # ABSTRACT: What does it do? It installs stuff....
-
+$Installer::VERSION = '0.902';
 use strict;
 use warnings;
 use Installer::Target;
@@ -66,7 +63,7 @@ Installer - What does it do? It installs stuff....
 
 =head1 VERSION
 
-version 0.901
+version 0.902
 
 =head1 SYNOPSIS
 
