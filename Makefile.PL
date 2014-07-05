@@ -35,10 +35,9 @@ my %WriteMakefileArgs = (
     "namespace::clean" => 0
   },
   "TEST_REQUIRES" => {
-    "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.98"
   },
-  "VERSION" => "0.902",
+  "VERSION" => "0.903",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -55,7 +54,6 @@ my %FallbackPrereqs = (
   "Module::CPANfile" => 0,
   "Moo" => 0,
   "Path::Class" => 0,
-  "Test::LoadAllModules" => "0.021",
   "Test::More" => "0.98",
   "namespace::clean" => 0
 );

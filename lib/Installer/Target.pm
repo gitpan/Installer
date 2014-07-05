@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Target::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Currently running project
-$Installer::Target::VERSION = '0.902';
+$Installer::Target::VERSION = '0.903';
 use Moo;
 use IO::All;
 use IPC::Open3 ();
@@ -566,7 +566,7 @@ Installer::Target - Currently running project
 
 =head1 VERSION
 
-version 0.902
+version 0.903
 
 =head1 DESCRIPTION
 

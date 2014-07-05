@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1740-08-05 00:00:00 +0000 to present.
+Changes from 1740-09-20 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.902 at 2014-05-20 19:58:52 +0000
+version 0.903 at 2014-07-05 19:34:25 +0000
 ------------------------------------------
+
+  Change: a1aa19b2bd19540b4cb768a2bf08254ee3ae1f79
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-07-05 21:34:00 +0000
+
+    Adapting to new version of pluginbundle 
 
   Change: 6c0420dd4beb9b1ad78fd1ff787d7ced21bd8e06
   Author: Torsten Raudssus <torsten@raudss.us>

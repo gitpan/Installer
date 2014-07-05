@@ -40,7 +40,6 @@
       },
       "test" : {
          "requires" : {
-            "Test::LoadAllModules" : "0.021",
             "Test::More" : "0.98"
          }
       }
@@ -54,7 +53,7 @@
          "web" : "https://github.com/Getty/p5-installer"
       }
    },
-   "version" : "0.902",
+   "version" : "0.903",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"
@@ -191,15 +190,9 @@
             "version" : "0.011"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "@Author::GETTY/TestsOfAuthorGETTY",
-            "version" : "5.015"
+            "class" : "Dist::Zilla::Plugin::Prereqs::FromCPANfile",
+            "name" : "@Author::GETTY/Prereqs::FromCPANfile",
+            "version" : "0.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::ChangelogFromGit",
@@ -333,28 +326,6 @@
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "@Author::GETTY/@Git/Push",
             "version" : "2.020"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "requires"
-               }
-            },
-            "name" : "Prereqs",
-            "version" : "5.015"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "TestRequires",
-            "version" : "5.015"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

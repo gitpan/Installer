@@ -3,7 +3,7 @@ BEGIN {
   $Installer::Software::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A software installation
-$Installer::Software::VERSION = '0.902';
+$Installer::Software::VERSION = '0.903';
 use Moo;
 use IO::All;
 use IO::All::LWP;
@@ -233,7 +233,7 @@ Installer::Software - A software installation
 
 =head1 VERSION
 
-version 0.902
+version 0.903
 
 =head1 DESCRIPTION
 

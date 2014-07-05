@@ -3,7 +3,6 @@ abstract: 'What does it do? It installs stuff....'
 author:
   - 'Torsten Raudssus <torsten@raudss.us>'
 build_requires:
-  Test::LoadAllModules: '0.021'
   Test::More: '0.98'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
@@ -28,7 +27,7 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-installer
   repository: https://github.com/Getty/p5-installer.git
-version: '0.902'
+version: '0.903'
 x_Dist_Zilla:
   perl:
     version: '5.018001'
@@ -137,13 +136,9 @@ x_Dist_Zilla:
       name: '@Author::GETTY/Git::CheckFor::CorrectBranch'
       version: '0.011'
     -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: requires
-      name: '@Author::GETTY/TestsOfAuthorGETTY'
-      version: '5.015'
+      class: Dist::Zilla::Plugin::Prereqs::FromCPANfile
+      name: '@Author::GETTY/Prereqs::FromCPANfile'
+      version: '0.06'
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit
       name: '@Author::GETTY/ChangelogFromGit'
@@ -248,22 +243,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Author::GETTY/@Git/Push'
       version: '2.020'
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: runtime
-          type: requires
-      name: Prereqs
-      version: '5.015'
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: requires
-      name: TestRequires
-      version: '5.015'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
